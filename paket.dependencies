@@ -20,6 +20,19 @@ source https://api.nuget.org/v3/index.json
 
 
 
+group GitHubStars.Backend
+
+storage: none
+source https://api.nuget.org/v3/index.json
+
+nuget Saturn ~> 0.12
+nuget Fable.Remoting.Giraffe ~> 3.11
+nuget FSharp.Data.GraphQL.Client ~> 1.0
+nuget FSharpPlus ~> 1.1.0-rc3
+
+
+
+
 group GitHubStars.UI.Frontend
 
 storage: none
