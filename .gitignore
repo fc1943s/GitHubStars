@@ -1,0 +1,39 @@
+### Local settings
+
+# ide settings
+.vs/
+.idea/
+
+# user configurations
+*.user
+
+
+
+### .net
+
+obj/
+bin/
+nupkg/
+packages/
+!/packages/
+
+.fake/
+.paket/
+paket-files/
+
+
+
+### JavaScript
+
+# npm packages
+node_modules/
+
+
+
+### Mixed
+
+dist/
+logs/
+
+
+
