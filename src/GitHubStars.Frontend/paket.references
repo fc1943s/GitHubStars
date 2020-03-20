@@ -1,0 +1,10 @@
+group GitHubStars.Frontend
+
+FSharp.Core
+
+Fable.FontAwesome.Free
+Fulma
+Fable.Elmish.HMR
+Fable.SimpleHttp
+Fable.SimpleJson
+

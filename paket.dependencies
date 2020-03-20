@@ -2,64 +2,41 @@ version 5.226.0
 
 framework: netcoreapp3.1, netstandard2.0
 
-
-
 group Main
+    storage: none
+    source https://api.nuget.org/v3/index.json
 
-storage: none
-source https://api.nuget.org/v3/index.json
-
-nuget FSharp.Core ~> 4.7
-
-
-
-group GitHubStars.Shared
-
-storage: none
-source https://api.nuget.org/v3/index.json
-
+    nuget FSharp.Core ~> 4.7
 
 
 group GitHubStars.Backend
+    storage: none
+    source https://api.nuget.org/v3/index.json
 
-storage: none
-source https://api.nuget.org/v3/index.json
-
-nuget Saturn ~> 0.12
-nuget Fable.Remoting.Giraffe ~> 3.11
-nuget FSharp.Data.GraphQL.Client ~> 1.0
-nuget FSharpPlus ~> 1.1.0-rc3
-
+    nuget Npgsql.FSharp ~> 3.1
+    nuget Saturn ~> 0.12
+    nuget FSharp.Data.GraphQL.Client ~> 1.0
+    nuget FSharpPlus ~> 1.1.0-rc3
 
 
+group GitHubStars.Frontend
+    storage: none
+    source https://api.nuget.org/v3/index.json
 
-group GitHubStars.UI.Frontend
-
-storage: none
-source https://api.nuget.org/v3/index.json
-
-clitool dotnet-fable ~> 2.0
-
-
-
-group Testing
-
-storage: none
-source https://api.nuget.org/v3/index.json
-
-nuget Serilog.Sinks.XUnit ~> 1.0
-nuget Microsoft.NET.Test.Sdk ~> 16.4 prerelease
-nuget xunit.runner.visualstudio ~> 2.2 prerelease
-nuget FsUnit.xUnit ~> 3.8
+    clitool dotnet-fable ~> 2.0
+    nuget Fable.FontAwesome.Free ~> 2.0
+    nuget Fulma ~> 2.5
+    nuget Fable.Elmish.HMR ~> 4.0
+    nuget Fable.SimpleHttp ~> 3.0
+    nuget Fable.SimpleJson ~> 3.8
 
 
+group GitHubStars.Backend.Tests
+    storage: none
+    source https://api.nuget.org/v3/index.json
 
-group Build
+    nuget Expecto ~> 8.13
+    nuget DotNet.TestContainers ~> 1.2 prerelease
+ 
 
-storage: none
-source https://api.nuget.org/v3/index.json
-
-nuget Fake.Core.Target prerelease
-nuget Fake.DotNet.Cli prerelease
-nuget Fake.IO.FileSystem prerelease 
 

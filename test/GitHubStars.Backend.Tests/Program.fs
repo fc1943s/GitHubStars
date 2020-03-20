@@ -1,4 +1,10 @@
-module Program
+namespace GitHubStars.Backend
 
-[<EntryPoint>]
-let main _ = 0
+open Expecto
+
+module Program =
+
+    [<EntryPoint>]
+    let main args =
+        runTestsWithArgs defaultConfig args IntegrationTests.tests
+

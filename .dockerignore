@@ -1,0 +1,14 @@
+.git
+.idea
+.paket
+paket-files
+
+**/*.user
+
+*Docker*
+*docker*
+
+**/.fable
+**/node_modules
+**/bin
+**/obj

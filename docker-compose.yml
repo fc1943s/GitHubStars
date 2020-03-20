@@ -1,0 +1,52 @@
+version: '3.5'
+
+volumes:
+    postgres:
+
+networks:
+  githubstars:
+    driver: bridge
+
+services:
+  githubstars-postgres:
+    container_name: githubstars-postgres
+    image: postgres:12.2-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+    - postgres:/var/lib/postgresql/data
+    ports:
+    - "5432:5432"
+    networks:
+    - githubstars
+    restart: unless-stopped
+
+  githubstars-backend:
+    container_name: githubstars-backend
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      GITHUB_API_TOKEN: ${GITHUB_API_TOKEN}
+    ports:
+    - "8086:8086"
+    networks:
+    - githubstars
+    depends_on:
+    - githubstars-postgres
+    restart: unless-stopped
+
+  githubstars-frontend:
+    container_name: githubstars-frontend
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+      args:
+        - API_URL
+    ports:
+      - "8087:8087"
+    restart: unless-stopped
+

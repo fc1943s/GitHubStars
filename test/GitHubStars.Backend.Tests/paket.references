@@ -1,8 +1,7 @@
-group Testing
+group GitHubStars.Backend.Tests
 
 FSharp.Core
 
-Microsoft.NET.Test.Sdk
-xunit.runner.visualstudio
-FsUnit.xUnit
+Expecto
+DotNet.TestContainers
 

@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  githubstars-backend-tests:
+    container_name: githubstars-backend-tests
+    build:
+      context: .
+      dockerfile: backend.integration-tests.Dockerfile
+    environment:
+      GITHUB_API_TOKEN: ${GITHUB_API_TOKEN}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+

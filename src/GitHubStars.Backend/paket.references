@@ -2,7 +2,7 @@ group GitHubStars.Backend
 
 FSharp.Core
 
+Npgsql.FSharp
 Saturn
-Fable.Remoting.Giraffe
 FSharp.Data.GraphQL.Client
 FSharpPlus

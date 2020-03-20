@@ -1,16 +1,27 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repo", "repo", "{AC1CE2EB-72D2-480C-889B-C4940CBC5578}"
 	ProjectSection(SolutionItems) = preProject
+		backend.integration-tests.Dockerfile = backend.integration-tests.Dockerfile
+		backend.Dockerfile = backend.Dockerfile
+		frontend.Dockerfile = frontend.Dockerfile
+		docker-compose.integration-tests.yml = docker-compose.integration-tests.yml
+		docker-compose.yml = docker-compose.yml
 		paket.dependencies = paket.dependencies
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GitHubStars.Shared", "src\GitHubStars.Shared\GitHubStars.Shared.fsproj", "{1BC0C538-C979-4F53-AE78-01857D7AB278}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{148ABE0B-1BC7-425D-ABCF-8F0A115EFE7F}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GitHubStars.Backend", "src\GitHubStars.Backend\GitHubStars.Backend.fsproj", "{F0614EE9-3564-4DC0-ACDE-1D7E22270FBE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8A107B93-0FEB-4683-B93B-2CEDDF8F1D73}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GitHubStars.Backend.Tests", "test\GitHubStars.Backend.Tests\GitHubStars.Backend.Tests.fsproj", "{98007844-226F-4CE7-B801-EB230B350087}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GitHubStars.Backend.Tests", "test\GitHubStars.Backend.Tests\GitHubStars.Backend.Tests.fsproj", "{410E2453-CF1E-450A-89F9-3D76E98542A1}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GitHubStars.Backend", "src\GitHubStars.Backend\GitHubStars.Backend.fsproj", "{659B324D-DC98-41DE-A285-BD05A1DC9032}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GitHubStars.Frontend", "src\GitHubStars.Frontend\GitHubStars.Frontend.fsproj", "{178BF4B0-9E3F-4CC2-B7E3-E3037570403E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GitHubStars.Shared", "src\GitHubStars.Shared\GitHubStars.Shared.fsproj", "{529EC126-561D-46C7-8553-EA40C21CDC24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,20 +29,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1BC0C538-C979-4F53-AE78-01857D7AB278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BC0C538-C979-4F53-AE78-01857D7AB278}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BC0C538-C979-4F53-AE78-01857D7AB278}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BC0C538-C979-4F53-AE78-01857D7AB278}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0614EE9-3564-4DC0-ACDE-1D7E22270FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0614EE9-3564-4DC0-ACDE-1D7E22270FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0614EE9-3564-4DC0-ACDE-1D7E22270FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0614EE9-3564-4DC0-ACDE-1D7E22270FBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98007844-226F-4CE7-B801-EB230B350087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98007844-226F-4CE7-B801-EB230B350087}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98007844-226F-4CE7-B801-EB230B350087}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98007844-226F-4CE7-B801-EB230B350087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{410E2453-CF1E-450A-89F9-3D76E98542A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410E2453-CF1E-450A-89F9-3D76E98542A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410E2453-CF1E-450A-89F9-3D76E98542A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410E2453-CF1E-450A-89F9-3D76E98542A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{659B324D-DC98-41DE-A285-BD05A1DC9032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{659B324D-DC98-41DE-A285-BD05A1DC9032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{659B324D-DC98-41DE-A285-BD05A1DC9032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{659B324D-DC98-41DE-A285-BD05A1DC9032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{178BF4B0-9E3F-4CC2-B7E3-E3037570403E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178BF4B0-9E3F-4CC2-B7E3-E3037570403E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178BF4B0-9E3F-4CC2-B7E3-E3037570403E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178BF4B0-9E3F-4CC2-B7E3-E3037570403E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529EC126-561D-46C7-8553-EA40C21CDC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529EC126-561D-46C7-8553-EA40C21CDC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529EC126-561D-46C7-8553-EA40C21CDC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529EC126-561D-46C7-8553-EA40C21CDC24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1BC0C538-C979-4F53-AE78-01857D7AB278} = {74A00DAC-A1C6-400D-8181-30373D536EB9}
+		{410E2453-CF1E-450A-89F9-3D76E98542A1} = {8A107B93-0FEB-4683-B93B-2CEDDF8F1D73}
+		{659B324D-DC98-41DE-A285-BD05A1DC9032} = {148ABE0B-1BC7-425D-ABCF-8F0A115EFE7F}
+		{178BF4B0-9E3F-4CC2-B7E3-E3037570403E} = {148ABE0B-1BC7-425D-ABCF-8F0A115EFE7F}
+		{529EC126-561D-46C7-8553-EA40C21CDC24} = {148ABE0B-1BC7-425D-ABCF-8F0A115EFE7F}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Core.fs" />
+    <Compile Include="Api.fs" />
+    <Compile Include="ErrorComponent.fs" />
+    <Compile Include="HeaderComponent.fs" />
+    <Compile Include="SearchPageComponent.fs" />
+    <Compile Include="RepositoryListPageComponent.fs" />
+    <Compile Include="Program.fs" />
+    <Content Include="public\index.scss" />
+    <Content Include="public\index.html" />
+    <Content Include="package.json" />
+    <Content Include="webpack.config.js" />
+    <Content Include="paket.references" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GitHubStars.Shared\GitHubStars.Shared.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

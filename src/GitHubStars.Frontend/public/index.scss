@@ -1,0 +1,62 @@
+#app > .container {
+  max-width: 1400px;
+  padding-bottom: 20px;
+}
+
+a {
+  text-decoration: underline;
+  color: #5d99ff;
+}
+
+.valign {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 300px);
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  color: #444;
+  
+  &::placeholder {
+    color: #888;
+  }
+}
+
+.control.has-icons-left  {
+  .input ~ .icon {
+    color: #444;
+  }
+  
+  .input:focus ~ .icon {
+    color: #888;
+  }
+}
+
+.table td, .table th {
+  border-color: #777;
+}
+
+#error {
+  position: fixed;
+  top: 6px;
+  left: 0;
+  right: 0;
+  padding: 0 30%;
+  z-index: 1;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between; 
+  padding: 40px 0;
+  
+  > div {
+    font-size: 30px;
+  }
+  
+  > a {
+    align-self: center;
+  }
+}
